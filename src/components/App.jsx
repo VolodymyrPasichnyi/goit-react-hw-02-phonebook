@@ -7,17 +7,24 @@ export class App extends Component {
     name: ''
   }
 
-  Click = e => {
-    e.preventDefault()
-    console.log(e)
+  clickOnChange = evt => {
+    this.setState({ name: evt.target.value})
+  }
+
+  clickOnSubmit = evt => {
+    evt.preventDefault();
+    console.log(`Name: ${this.state.name}`);
+    this.props.onSubmit({ ...this.state })
   }
 
 
     render() {
+      const { name } = this.state
+
       return (
         <div>
           <h2>Phonebook</h2>
-            <form action="">
+            <form onSubmit={this.clickOnSubmit}>
               <h4>Name</h4>
               <input
                 type="text"
@@ -25,9 +32,10 @@ export class App extends Component {
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 required
-                onChange={this.Click}
+                value={name}
+                onChange={this.clickOnChange}
             />
-              <button>Add contact</button>
+              <button type="submit">Add contact</button>
             </form>
           <h2>Contacts</h2>
             <ul>
