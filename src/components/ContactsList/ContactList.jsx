@@ -1,4 +1,4 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Contacts } from './Contacts'
 
 export const ContactList = ({ contacts, deleteUser }) => {
@@ -22,12 +22,12 @@ export const ContactList = ({ contacts, deleteUser }) => {
 
 
 ContactList.propTypes = {
-    contacts: propTypes.arrayOf(
-        propTypes.shape({
-            name: propTypes.string.isRequired,
-            number: propTypes.string.isRequired,
-            id: propTypes.string.isRequired,
+    contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            number: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
         })
     ),
-    deleteUser: propTypes.func.isRequired
+    deleteUser: PropTypes.func.isRequired
 }

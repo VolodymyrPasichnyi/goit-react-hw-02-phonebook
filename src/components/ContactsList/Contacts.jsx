@@ -1,4 +1,4 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import css from '../ContactsList/Contacts.module.css'
 
 
@@ -12,8 +12,8 @@ export const Contacts = ({ name, number, deleteUser, id }) => {
 }
 
 Contacts.propTypes = {
-    name: propTypes.string.isRequired,
-    number: propTypes.string.isRequired,
-    deleteUser: propTypes.func.isRequired,
-    id: propTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+    deleteUser: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
 }

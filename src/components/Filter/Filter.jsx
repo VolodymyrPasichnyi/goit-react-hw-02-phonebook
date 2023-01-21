@@ -1,4 +1,4 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import css from '../Filter/Filter.module.css'
 
 
@@ -17,6 +17,6 @@ export const Filter = ({ filter, value }) => {
 }
 
 Filter.propTypes = {
-    filter: propTypes.func.isRequired,
-    value: propTypes.string.isRequired,
+    filter: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
 }
